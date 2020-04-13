@@ -1,0 +1,23 @@
+BRAINFUCK METHODS:
+
+Prints a number without changing it
+>++++++[<++++++++>-]<.>++++++[<-------->-]<
+
+Take a number input with an empty spot next to it:
+,
+>++++++
+[
+    <--------
+    >-
+]<
+
+,>++++++[<-------->-]< accept
+
+Add numbers in adjacent memory slots starting with the second ending with the first:
+[
+    -<+>
+]<
+
+[-<+>]< add
+
+
