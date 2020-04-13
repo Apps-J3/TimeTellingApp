@@ -10,7 +10,7 @@ public class TimeTellingGame extends Game {
 
 	@Override
 	public void create () {
-		Gdx.app.log("Game", "created");
+		Gdx.app.log("Game", "Gamecreated");
 		AssetLoader.load();
 		setScreen(new TitleScreen(this));
 	}
