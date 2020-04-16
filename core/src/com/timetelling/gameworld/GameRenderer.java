@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameWorld;
+import com.timetelling.helper.AssetLoader;
 import com.timetelling.helper.SimpleButton;
 import com.timetelling.screens.TitleScreen;
 
@@ -34,12 +35,8 @@ public class GameRenderer {
         batcher.setProjectionMatrix(cam.combined);
         shapeRenderer = new ShapeRenderer();
         shapeRenderer.setProjectionMatrix(cam.combined);
+        background = AssetLoader.background;
         backButton = new SimpleButton(20, height-20-height/20, width/10, height/20, "Home");
-    }
-
-    public void create() {
-        batcher = new SpriteBatch();
-        background = new Texture("background.png");
     }
 
     public void render() {
