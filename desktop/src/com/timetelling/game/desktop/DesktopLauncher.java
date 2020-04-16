@@ -12,5 +12,6 @@ public class DesktopLauncher {
 		config.height = 960;
 		new LwjglApplication(new TimeTellingGame(), config);
 		//Pragya was here
+		//Maria was here :)
 	}
 }
