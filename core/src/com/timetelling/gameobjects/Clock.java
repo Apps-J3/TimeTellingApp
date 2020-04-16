@@ -1,13 +1,19 @@
-package com.timetelling.helper;
+package com.timetelling.gameobjects;
 
 public class Clock {
 
     private Time time;
-    double hours;
-    double minutes;
+    private int hours;
+    private int minutes;
 
     public Clock(Time time) {
         this.time = time;
+        hours = time.getHours();
+        minutes = time.getMinutes();
+    }
+
+    public Clock() {
+        this.time = new Time();
         hours = time.getHours();
         minutes = time.getMinutes();
     }
@@ -24,5 +30,12 @@ public class Clock {
         return positionm;
     }
 
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public Time getTime() {
+        return time;
+    }
 }
 

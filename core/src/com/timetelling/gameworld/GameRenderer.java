@@ -1,16 +1,15 @@
 package com.timetelling.gameworld;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.timetelling.game.TimeTellingGame;
+import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.helper.AssetLoader;
-import com.timetelling.helper.SimpleButton;
 import com.timetelling.screens.TitleScreen;
 
 public class GameRenderer {
@@ -40,8 +39,8 @@ public class GameRenderer {
     }
 
     public void render() {
-        //Gdx.gl.glClearColor(0, 0, 0, 1);
-        //Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batcher.begin();
         backButton.draw(batcher);
         batcher.draw(background,0,0);

@@ -1,9 +1,7 @@
 package com.timetelling.gameworld;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.timetelling.game.TimeTellingGame;
-import com.timetelling.helper.SimpleButton;
+import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.screens.LevelSelectScreen;
 import com.timetelling.screens.PracticeScreen;
 import com.timetelling.screens.TutorialScreen;
