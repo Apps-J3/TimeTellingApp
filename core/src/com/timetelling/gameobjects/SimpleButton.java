@@ -1,8 +1,11 @@
 package com.timetelling.gameobjects;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.timetelling.helper.AssetLoader;
 
@@ -13,10 +16,29 @@ public class SimpleButton {
     private boolean isPressed = false;
     private TextButton textButton;
 
+
+    public SimpleButton(float x, float y, float width, float height, Skin skin) {
+        this.word = "";
+        bounds = new Rectangle(x, y, width, height);
+        textButton = new TextButton(word, skin, "default");
+        textButton.setWidth(width);
+        textButton.setHeight(height);
+        textButton.setPosition(x, y);
+    }
+
+    public SimpleButton(float x, float y, float width, float height, String word, Skin skin) {
+        this.word = word;
+        bounds = new Rectangle(x, y, width, height);
+        textButton = new TextButton(word, skin, "default");
+        textButton.setWidth(width);
+        textButton.setHeight(height);
+        textButton.setPosition(x, y);
+    }
+
     public SimpleButton(float x, float y, float width, float height, String word) {
         this.word = word;
         bounds = new Rectangle(x, y, width, height);
-        textButton = new TextButton(word, AssetLoader.skin, "default");
+        textButton = new TextButton(word, AssetLoader.defaultSkin, "default");
         textButton.setWidth(width);
         textButton.setHeight(height);
         textButton.setPosition(x, y);
@@ -25,7 +47,7 @@ public class SimpleButton {
     public SimpleButton(float x, float y, float width, float height) {
         this.word = "";
         bounds = new Rectangle(x, y, width, height);
-        textButton = new TextButton(word, AssetLoader.skin, "default");
+        textButton = new TextButton(word, AssetLoader.defaultSkin, "default");
         textButton.setWidth(width);
         textButton.setHeight(height);
         textButton.setPosition(x, y);
