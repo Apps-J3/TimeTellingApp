@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.timetelling.game.TimeTellingGame;
@@ -21,7 +22,7 @@ public class GameRenderer {
     protected int width, height;
     protected TimeTellingGame game;
     private SimpleButton backButton;
-    private Texture background;
+    private Sprite background;
 
     public GameRenderer(GameWorld world, TimeTellingGame game) {
         this.game = game;
@@ -34,7 +35,7 @@ public class GameRenderer {
         batcher.setProjectionMatrix(cam.combined);
         shapeRenderer = new ShapeRenderer();
         shapeRenderer.setProjectionMatrix(cam.combined);
-        background = AssetLoader.background;
+        background = AssetLoader.backgroundSprite;
         backButton = new SimpleButton(20, height-20-height/20, width/10, height/20, "Home");
     }
 
@@ -42,8 +43,8 @@ public class GameRenderer {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batcher.begin();
-        backButton.draw(batcher);
         batcher.draw(background,0,0);
+        backButton.draw(batcher);
         batcher.end();
     }
 
