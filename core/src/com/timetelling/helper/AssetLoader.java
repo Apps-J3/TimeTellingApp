@@ -2,34 +2,29 @@ package com.timetelling.helper;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
-import java.awt.Font;
-
 public class AssetLoader {
 
-    public static Skin defaultSkin;
+    public static Skin skin;
 
     public static Texture background;
 
-    public static Texture platform;
+    public static Sprite backgroundSprite;
 
-    public static BitmapFont font;
+    public static Texture clock;
 
-    public static Skin platformSkin;
+    public static Sprite minutehand;
 
-
+    public static Sprite hourhand;
 
     public static void load() {
 
-        defaultSkin = new Skin(Gdx.files.internal("uiskin.json"));
+        skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture("background.png");
-        platform = new Texture(Gdx.files.internal("platform.png"));
-        font = new BitmapFont(Gdx.files.internal("default.fnt"));
-       // platformSkin = new Skin(platform, font);
-
+        Sprite backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        clock = new Texture("clock.png");
     }
 
     public static void dispose() {

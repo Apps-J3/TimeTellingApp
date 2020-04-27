@@ -38,7 +38,7 @@ public class SimpleButton {
     public SimpleButton(float x, float y, float width, float height, String word) {
         this.word = word;
         bounds = new Rectangle(x, y, width, height);
-        textButton = new TextButton(word, AssetLoader.defaultSkin, "default");
+        textButton = new TextButton(word, AssetLoader.skin, "default");
         textButton.setWidth(width);
         textButton.setHeight(height);
         textButton.setPosition(x, y);
@@ -47,7 +47,7 @@ public class SimpleButton {
     public SimpleButton(float x, float y, float width, float height) {
         this.word = "";
         bounds = new Rectangle(x, y, width, height);
-        textButton = new TextButton(word, AssetLoader.defaultSkin, "default");
+        textButton = new TextButton(word, AssetLoader.skin, "default");
         textButton.setWidth(width);
         textButton.setHeight(height);
         textButton.setPosition(x, y);

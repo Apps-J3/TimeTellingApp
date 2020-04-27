@@ -25,7 +25,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         buttons = new SimpleButton[choices.length];
 
         for (int i = 0; i < buttons.length; i++) {
-            buttons[i] = new SimpleButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, platform);
+            buttons[i] = new SimpleButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6);
         }
     }
 
