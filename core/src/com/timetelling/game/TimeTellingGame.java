@@ -3,6 +3,7 @@ package com.timetelling.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.timetelling.helper.AssetLoader;
 import com.timetelling.screens.TitleScreen;
 
