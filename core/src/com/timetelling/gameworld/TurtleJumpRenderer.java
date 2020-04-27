@@ -1,6 +1,7 @@
 package com.timetelling.gameworld;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameobjects.Clock;
@@ -34,9 +35,9 @@ public class TurtleJumpRenderer extends GameRenderer {
         super.render();
         batcher.begin();
         drawButtons();
-
         batcher.end();
     }
+
 
     public void drawButtons() {
         for (int i = 0; i < buttons.length; i++) {

@@ -15,6 +15,8 @@ public class AssetLoader {
 
     public static Texture clock;
 
+    public static Sprite clockSprite;
+
     public static Sprite minutehand;
 
     public static Sprite hourhand;
@@ -24,7 +26,9 @@ public class AssetLoader {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture("background.png");
         Sprite backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        clock = new Texture("clock.png");
+        clock = new Texture("ClockFace.png");
+        clockSprite = new Sprite(clock);
+
     }
 
     public static void dispose() {
