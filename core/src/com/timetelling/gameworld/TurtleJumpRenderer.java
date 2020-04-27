@@ -34,6 +34,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         super.render();
         batcher.begin();
         drawButtons();
+
         batcher.end();
     }
 
