@@ -23,6 +23,7 @@ public class GameRenderer {
     protected TimeTellingGame game;
     private SimpleButton backButton;
     private Sprite background;
+    private Sprite clock;
 
     public GameRenderer(GameWorld world, TimeTellingGame game) {
         this.game = game;
@@ -36,6 +37,7 @@ public class GameRenderer {
         shapeRenderer = new ShapeRenderer();
         shapeRenderer.setProjectionMatrix(cam.combined);
         background = AssetLoader.backgroundSprite;
+        clock = AssetLoader.clockSprite;
         backButton = new SimpleButton(20, height-20-height/20, width/10, height/20, "Home");
     }
 
@@ -45,6 +47,9 @@ public class GameRenderer {
         batcher.begin();
         batcher.draw(background,0,0);
         backButton.draw(batcher);
+        batcher.end();
+        batcher.begin();
+        batcher.draw(clock, 0 , 0);
         batcher.end();
     }
 
