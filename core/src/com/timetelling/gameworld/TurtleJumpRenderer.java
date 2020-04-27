@@ -2,6 +2,7 @@ package com.timetelling.gameworld;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameobjects.Clock;
@@ -17,10 +18,12 @@ public class TurtleJumpRenderer extends GameRenderer {
     private SimpleButton[] buttons;
     private TurtleJumpWorld world;
     private Skin skin;
+    private Sprite clock;
 
     public TurtleJumpRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
         this.world = (TurtleJumpWorld)world;
+        clock = AssetLoader.clockSprite;
         bar = this.world.getBar();
         choices = this.world.getChoices();
         buttons = new SimpleButton[choices.length];
@@ -35,6 +38,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         super.render();
         batcher.begin();
         drawButtons();
+        batcher.draw(clock,0,0);
         batcher.end();
     }
 
