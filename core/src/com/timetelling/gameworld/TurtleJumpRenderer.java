@@ -9,7 +9,6 @@ import com.timetelling.gameobjects.Clock;
 import com.timetelling.gameobjects.ProgressBar;
 import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.gameobjects.Time;
-import com.timetelling.helper.AssetLoader;
 
 public class TurtleJumpRenderer extends GameRenderer {
 
@@ -52,6 +51,7 @@ public class TurtleJumpRenderer extends GameRenderer {
 
     @Override
     public boolean touchDown(int screenX, int screenY) {
+        if (bar.isMax()) game.setScreen(new ClockDropScreen(game));
         for (int i = 0; i < buttons.length; i++) {
             if (buttons[i].isClicked(screenX, screenY)) world.guess(choices[i]);
         }

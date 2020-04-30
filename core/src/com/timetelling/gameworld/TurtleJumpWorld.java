@@ -13,7 +13,7 @@ public class TurtleJumpWorld extends GameWorld {
     private ProgressBar bar;
 
     public TurtleJumpWorld() {
-        bar = new ProgressBar(20);
+        bar = new ProgressBar();
         clock = new Clock();
         choices = new Time[3];
         setTimes();
