@@ -25,7 +25,7 @@ public class AssetLoader {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture("background.png");
         backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        clock = new Texture("clockface3.png");
+        clock = new Texture("whiteClock.png");
     }
 
     public static void dispose() {

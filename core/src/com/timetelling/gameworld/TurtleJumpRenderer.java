@@ -38,7 +38,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         super.render();
         batcher.begin();
         drawButtons();
-        batcher.draw(clockSprite, width/4, height/2, width/2, height/3);
+        batcher.draw(clockSprite, (3*width)/10, height/2, (2*width)/5, (3*height)/8);
         batcher.end();
     }
 
