@@ -37,7 +37,6 @@ public class GameRenderer {
         shapeRenderer = new ShapeRenderer();
         shapeRenderer.setProjectionMatrix(cam.combined);
         background = AssetLoader.backgroundSprite;
-        clock = AssetLoader.clockSprite;
         backButton = new SimpleButton(20, height-20-height/20, width/10, height/20, "Home");
     }
 

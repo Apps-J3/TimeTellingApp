@@ -37,6 +37,10 @@ public class TurtleJumpWorld extends GameWorld {
         return false;
     }
 
+    public Time getCorrectTime() {
+        return correctTime;
+    }
+
     public ProgressBar getBar() {
         return bar;
     }

@@ -19,7 +19,7 @@ public class TurtleJumpRenderer extends GameRenderer {
     private SimpleButton[] buttons;
     private TurtleJumpWorld world;
     private Skin skin;
-    private Sprite clockSprite;
+    private Clock clock;
 
     public TurtleJumpRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
@@ -27,7 +27,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         bar = this.world.getBar();
         choices = this.world.getChoices();
         buttons = new SimpleButton[choices.length];
-        clockSprite = new Sprite(AssetLoader.clock);
+        clock = new Clock(this.world.getCorrectTime());
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new SimpleButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6);
         }
@@ -38,7 +38,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         super.render();
         batcher.begin();
         drawButtons();
-        batcher.draw(clockSprite, (3*width)/10, height/2, (2*width)/5, (3*height)/8);
+        clock.draw(batcher, width/2, 2*height/3, width/2);
         batcher.end();
     }
 
@@ -54,7 +54,10 @@ public class TurtleJumpRenderer extends GameRenderer {
     public boolean touchDown(int screenX, int screenY) {
         if (bar.isMax()) game.setScreen(new ClockDropScreen(game));
         for (int i = 0; i < buttons.length; i++) {
-            if (buttons[i].isClicked(screenX, screenY)) world.guess(choices[i]);
+            if (buttons[i].isClicked(screenX, screenY)) {
+                world.guess(choices[i]);
+                clock.setTime(world.getCorrectTime());
+            }
         }
         return super.touchDown(screenX, screenY);
     }

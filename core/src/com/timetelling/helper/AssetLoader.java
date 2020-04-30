@@ -15,17 +15,17 @@ public class AssetLoader {
 
     public static Texture clock;
 
-    public static Sprite clockSprite;
+    public static Texture minuteHand;
 
-    public static Sprite minutehand;
-
-    public static Sprite hourhand;
+    public static Texture hourHand;
 
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture("background.png");
         backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         clock = new Texture("whiteClock.png");
+        minuteHand = new Texture("blue.png");
+        hourHand = new Texture("red.png");
     }
 
     public static void dispose() {
