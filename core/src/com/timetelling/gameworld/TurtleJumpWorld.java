@@ -8,20 +8,19 @@ import com.timetelling.helper.TimeGenerator;
 
 public class TurtleJumpWorld extends GameWorld {
 
-    private Clock clock;
+    private Time correctTime;
     private Time[] choices;
     private ProgressBar bar;
 
     public TurtleJumpWorld() {
         bar = new ProgressBar();
-        clock = new Clock();
+        correctTime = new Time();
         choices = new Time[3];
         setTimes();
     }
 
     public void setTimes() {
-        Time correctTime = TimeGenerator.generateTime();
-        clock.setTime(correctTime);
+        correctTime = TimeGenerator.generateTime();
         for (int i = 0; i < choices.length; i++) {
             choices[i] = TimeGenerator.generateTime();
         }
@@ -30,7 +29,7 @@ public class TurtleJumpWorld extends GameWorld {
     }
 
     public boolean guess(Time time) {
-        if (time.equals(clock.getTime())) {
+        if (time.equals(correctTime)) {
             setTimes();
             bar.increment(1);
             return true;

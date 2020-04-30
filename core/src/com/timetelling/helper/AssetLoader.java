@@ -22,13 +22,10 @@ public class AssetLoader {
     public static Sprite hourhand;
 
     public static void load() {
-
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture("background.png");
-        Sprite backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         clock = new Texture("clockface3.png");
-        clockSprite = new Sprite(clock);
-
     }
 
     public static void dispose() {

@@ -1,10 +1,13 @@
 package com.timetelling.gameobjects;
 
+import com.badlogic.gdx.graphics.g2d.Sprite;
+
 public class Clock {
 
     private Time time;
     private int hours;
     private int minutes;
+    private Sprite sprite;
 
     public Clock(Time time) {
         this.time = time;

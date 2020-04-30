@@ -48,9 +48,6 @@ public class GameRenderer {
         batcher.draw(background,0,0);
         backButton.draw(batcher);
         batcher.end();
-        batcher.begin();
-        batcher.draw(clock, 0 , 0);
-        batcher.end();
     }
 
     public boolean touchDown(int screenX, int screenY) {
