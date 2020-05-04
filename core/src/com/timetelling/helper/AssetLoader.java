@@ -15,7 +15,6 @@ public class AssetLoader {
     public static Texture minuteHand;
     public static Texture hourHand;
     public static BitmapFont font;
-
     public static Texture platform;
 
     public static void load() {
@@ -26,6 +25,7 @@ public class AssetLoader {
         minuteHand = new Texture(Gdx.files.internal("blue.png"));
         hourHand = new Texture(Gdx.files.internal("red.png"));
         font = new BitmapFont(Gdx.files.internal("default.fnt"));
+        platform = new Texture(Gdx.files.internal("jumpPlatform.png"));
     }
 
     public static void dispose() {
