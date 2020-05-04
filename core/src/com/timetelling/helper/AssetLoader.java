@@ -19,6 +19,8 @@ public class AssetLoader {
 
     public static Texture hourHand;
 
+    public static Texture platform;
+
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture("background.png");
@@ -26,6 +28,7 @@ public class AssetLoader {
         clock = new Texture("whiteClock.png");
         minuteHand = new Texture("blue.png");
         hourHand = new Texture("red.png");
+        platform = new Texture("jumpPlatform.png");
     }
 
     public static void dispose() {
