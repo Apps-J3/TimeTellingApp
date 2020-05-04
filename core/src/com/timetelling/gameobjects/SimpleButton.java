@@ -11,29 +11,10 @@ import com.timetelling.helper.AssetLoader;
 
 public class SimpleButton {
 
-    private Rectangle bounds;
-    private String word;
+
+    private String word;  private Rectangle bounds;
     private boolean isPressed = false;
     private TextButton textButton;
-
-
-    public SimpleButton(float x, float y, float width, float height, Skin skin) {
-        this.word = "";
-        bounds = new Rectangle(x, y, width, height);
-        textButton = new TextButton(word, skin, "default");
-        textButton.setWidth(width);
-        textButton.setHeight(height);
-        textButton.setPosition(x, y);
-    }
-
-    public SimpleButton(float x, float y, float width, float height, String word, Skin skin) {
-        this.word = word;
-        bounds = new Rectangle(x, y, width, height);
-        textButton = new TextButton(word, skin, "default");
-        textButton.setWidth(width);
-        textButton.setHeight(height);
-        textButton.setPosition(x, y);
-    }
 
     public SimpleButton(float x, float y, float width, float height, String word) {
         this.word = word;
