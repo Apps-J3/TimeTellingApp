@@ -17,7 +17,7 @@ public class TurtleJumpRenderer extends GameRenderer {
 
     private ProgressBar bar;
     private Time[] choices;
-    private SimpleButton[] buttons;
+    private ImgButton[] buttons;
     private TurtleJumpWorld world;
     private Skin skin;
     private Clock clock;
@@ -27,10 +27,10 @@ public class TurtleJumpRenderer extends GameRenderer {
         this.world = (TurtleJumpWorld)world;
         bar = this.world.getBar();
         choices = this.world.getChoices();
-        buttons = new SimpleButton[choices.length];
+        buttons = new ImgButton[choices.length];
         clock = new Clock(this.world.getCorrectTime());
         for (int i = 0; i < buttons.length; i++) {
-            buttons[i] = new SimpleButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6);
+            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.font, 0,0);
         }
 
     }
