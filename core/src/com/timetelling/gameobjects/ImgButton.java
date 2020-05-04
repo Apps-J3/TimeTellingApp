@@ -32,7 +32,7 @@ public class ImgButton {
 
     public void draw(SpriteBatch batcher) {
         batcher.draw(texture, bounds.x, bounds.y, bounds.width, bounds.height);
-        font.draw(batcher, word, textX, textY);
+        font.draw(batcher, word, bounds.x + textX, bounds.y + textY);
     }
 
     public boolean isTouchDown(int screenX, int screenY) {
