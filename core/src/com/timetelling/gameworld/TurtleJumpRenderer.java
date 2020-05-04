@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameobjects.Clock;
+import com.timetelling.gameobjects.ImgButton;
 import com.timetelling.gameobjects.ProgressBar;
 import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.gameobjects.Time;
@@ -31,6 +32,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new SimpleButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6);
         }
+
     }
 
     @Override
