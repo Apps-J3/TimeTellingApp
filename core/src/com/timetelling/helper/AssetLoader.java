@@ -16,10 +16,17 @@ public class AssetLoader {
     public static Texture hourHand;
     public static BitmapFont font;
 
+    public static Texture platform;
+
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
         background = new Texture(Gdx.files.internal("background.png"));
         backgroundSprite = new Sprite(background, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        clock = new Texture("whiteClock.png");
+        minuteHand = new Texture("blue.png");
+        hourHand = new Texture("red.png");
+        platform = new Texture("jumpPlatform.png");
+
         clock = new Texture(Gdx.files.internal("whiteClock.png"));
         minuteHand = new Texture(Gdx.files.internal("blue.png"));
         hourHand = new Texture(Gdx.files.internal("red.png"));
