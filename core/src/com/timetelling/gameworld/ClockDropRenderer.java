@@ -1,5 +1,6 @@
 package com.timetelling.gameworld;
 
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameobjects.Clock;
 import com.timetelling.gameobjects.ProgressBar;
@@ -12,6 +13,8 @@ public class ClockDropRenderer extends GameRenderer {
     private SimpleButton turtleButton;
     private ClockDropWorld world;
     private ProgressBar bar;
+    private Clock clock;
+    private BitmapFont font;
 
     public ClockDropRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);

@@ -51,4 +51,8 @@ public class ImgButton {
         return false;
     }
 
+    public void setWord(String word) {
+        this.word = word;
+    }
+
 }
