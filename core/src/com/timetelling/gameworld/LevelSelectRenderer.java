@@ -3,6 +3,7 @@ package com.timetelling.gameworld;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.helper.TimeGenerator;
+import com.timetelling.screens.GamemodeSelectScreen;
 import com.timetelling.screens.TurtleJumpScreen;
 
 public class LevelSelectRenderer extends GameRenderer {
@@ -32,23 +33,29 @@ public class LevelSelectRenderer extends GameRenderer {
 
     @Override
     public boolean touchDown(int screenX, int screenY) {
-        super.touchDown(screenX, screenY);
+        if (super.touchDown(screenX, screenY)) {
+            return true;
+        }
         if (easyButton.isClicked(screenX, screenY)) {
             TimeGenerator.level = 1;
-            game.setScreen(new TurtleJumpScreen(game));
+            game.setScreen(new GamemodeSelectScreen(game));
+            return true;
         }
         else if (mediumButton.isClicked(screenX, screenY)) {
             TimeGenerator.level = 2;
-            game.setScreen(new TurtleJumpScreen(game));
+            game.setScreen(new GamemodeSelectScreen(game));
+            return true;
         }
         else if (hardButton.isClicked(screenX, screenY)) {
             TimeGenerator.level = 3;
-            game.setScreen(new TurtleJumpScreen(game));
+            game.setScreen(new GamemodeSelectScreen(game));
+            return true;
         }
         else if (expertButton.isClicked(screenX, screenY)) {
             TimeGenerator.level = 4;
-            game.setScreen(new TurtleJumpScreen(game));
+            game.setScreen(new GamemodeSelectScreen(game));
+            return true;
         }
-        return true;
+        return false;
     }
 }

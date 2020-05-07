@@ -38,6 +38,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        renderer.touchUp(screenX, Gdx.graphics.getHeight()-screenY);
         return false;
     }
 
@@ -48,6 +49,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
+        renderer.mouseMoved(screenX, Gdx.graphics.getHeight()-screenY);
         return false;
     }
 

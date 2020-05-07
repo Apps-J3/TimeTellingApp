@@ -50,7 +50,18 @@ public class GameRenderer {
     }
 
     public boolean touchDown(int screenX, int screenY) {
-        if (backButton.isClicked(screenX, screenY)) game.setScreen(new TitleScreen(game));
+        if (backButton.isClicked(screenX, screenY)) {
+            game.setScreen(new TitleScreen(game));
+            return true;
+        }
+        return false;
+    }
+
+    public boolean touchUp(int screenX, int screenY) {
+        return true;
+    }
+
+    public boolean mouseMoved(int screenX, int screenY) {
         return true;
     }
 

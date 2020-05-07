@@ -9,6 +9,7 @@ import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.gameobjects.Time;
 import com.timetelling.helper.AssetLoader;
 import com.timetelling.screens.MovableClockScreen;
+import com.timetelling.screens.TitleScreen;
 
 public class ClockDropRenderer extends GameRenderer {
 
@@ -35,6 +36,8 @@ public class ClockDropRenderer extends GameRenderer {
         super.render();
         batcher.begin();
         drawButtons();
+        clock.setTime(world.getClockTime());
+        clock.draw(batcher, width/2, 2*height/3, width/2);
         batcher.end();
     }
 
@@ -43,14 +46,15 @@ public class ClockDropRenderer extends GameRenderer {
         turtleButton.draw(batcher);
     }
 
-    public void drawClock() {
-
-    }
-
     @Override
     public boolean touchDown(int screenX, int screenY) {
-        if (bar.isMax()) game.setScreen(new MovableClockScreen(game));
-        super.touchDown(screenX, screenY);
+        if (bar.isMax()) {
+            game.setScreen(new TitleScreen(game));
+            return true;
+        }
+        if (super.touchDown(screenX, screenY)) {
+
+        };
         if (trashButton.isClicked(screenX, screenY)) world.pushTrash();
         else if(turtleButton.isClicked(screenX, screenY)) world.pushTurtle();
         return true;
