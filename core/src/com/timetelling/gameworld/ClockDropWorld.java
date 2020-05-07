@@ -17,25 +17,29 @@ public class ClockDropWorld extends GameWorld {
         initializeNewClock();
     }
 
-    public void initializeNewClock() {
+    private void initializeNewClock() {
         targetTime = TimeGenerator.generateTime();
         if (Math.random() < 0.5) clockTime = TimeGenerator.generateTime();
         else clockTime = targetTime;
     }
 
-    public void pushTrash() {
+    public boolean pushTrash() {
         if (!targetTime.equals(clockTime)) {
             bar.increment(1);
             if (Math.random() < 0.5) clockTime = TimeGenerator.generateTime();
             else clockTime = targetTime;
+            return true;
         }
+        return false;
     }
 
-    public void pushTurtle() {
+    public boolean pushTurtle() {
         if (targetTime.equals(clockTime)) {
             bar.increment(1);
             initializeNewClock();
+            return true;
         }
+        return false;
     }
 
     public Time getTargetTime() {

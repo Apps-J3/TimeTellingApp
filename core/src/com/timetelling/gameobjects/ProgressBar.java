@@ -1,19 +1,32 @@
 package com.timetelling.gameobjects;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.timetelling.helper.AssetLoader;
 
 public class ProgressBar {
 
     private int score, maxScore;
+    private Texture white;
+    private Texture green;
+    private int border;
 
     public ProgressBar(int maxScore) {
         this.maxScore = maxScore;
-        score = 0;
+        setDefaults();
     }
 
     public ProgressBar() {
         maxScore = 20;
+        setDefaults();
+    }
+
+    private void setDefaults() {
         score = 0;
+        white = AssetLoader.white;
+        green = AssetLoader.green;
+        border = 5;
     }
 
     public void increment(int inc) {
@@ -26,6 +39,11 @@ public class ProgressBar {
         printScore();
     }
 
+    public void draw(SpriteBatch batcher, float x, float y, float width, float height) {
+        batcher.draw(white, x, y, width, height);
+        batcher.draw(green, x+border, y+border, score*(width-2*border)/maxScore, height-2*border);
+    }
+
     public int getScore() {
         return score;
     }
@@ -34,7 +52,7 @@ public class ProgressBar {
         return score==maxScore;
     }
 
-    public void printScore() {
+    private void printScore() {
         Gdx.app.log("ProgressBar", "Score: " + score);
     }
 

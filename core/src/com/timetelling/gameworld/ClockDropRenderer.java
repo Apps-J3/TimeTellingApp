@@ -38,24 +38,26 @@ public class ClockDropRenderer extends GameRenderer {
         drawButtons();
         clock.setTime(world.getClockTime());
         clock.draw(batcher, width/2, 2*height/3, width/2);
+        bar.draw(batcher, width/5, 9*height/10, 3*width/5, height/20);
         batcher.end();
     }
 
-    public void drawButtons() {
+    private void drawButtons() {
         trashButton.draw(batcher);
         turtleButton.draw(batcher);
     }
 
     @Override
     public boolean touchDown(int screenX, int screenY) {
-        if (bar.isMax()) {
-            game.setScreen(new TitleScreen(game));
-            return true;
-        }
-        if (super.touchDown(screenX, screenY)) {
+        if (super.touchDown(screenX, screenY)) return true;
+        else if (trashButton.isClicked(screenX, screenY)) {
+            boolean answer = world.pushTrash();
+            if (answer) {
+                if (bar.isMax()) game.setScreen(new TitleScreen(game));
+            } else {
 
-        };
-        if (trashButton.isClicked(screenX, screenY)) world.pushTrash();
+            }
+        }
         else if(turtleButton.isClicked(screenX, screenY)) world.pushTurtle();
         return true;
     }

@@ -9,7 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class AssetLoader {
 
     public static Skin skin;
-    public static Texture background;
+    private static Texture background;
     public static Sprite backgroundSprite;
     public static Texture clock;
     public static Texture minuteHand;
@@ -18,6 +18,8 @@ public class AssetLoader {
     public static Texture platform;
     public static Texture trash;
     public static Texture turtle;
+    public static Texture green;
+    public static Texture white;
 
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
@@ -30,6 +32,8 @@ public class AssetLoader {
         platform = new Texture(Gdx.files.internal("jumpPlatform.png"));
         trash = new Texture(Gdx.files.internal("trash.png"));
         turtle = new Texture(Gdx.files.internal("turtle.png"));
+        white = new Texture(Gdx.files.internal("white.png"));
+        green = new Texture(Gdx.files.internal("green.png"));
     }
 
     public static void dispose() {

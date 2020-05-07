@@ -44,12 +44,13 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
+        renderer.mouseMoved(screenX, Gdx.graphics.getHeight()-screenY);
         return false;
     }
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
-        renderer.mouseMoved(screenX, Gdx.graphics.getHeight()-screenY);
+
         return false;
     }
 

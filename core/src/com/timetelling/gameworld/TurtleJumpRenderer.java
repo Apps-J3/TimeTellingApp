@@ -42,11 +42,12 @@ public class TurtleJumpRenderer extends GameRenderer {
         batcher.begin();
         drawButtons();
         clock.draw(batcher, width/2, 2*height/3, width/2);
+        bar.draw(batcher, width/5, 9*height/10, 3*width/5, height/20);
         batcher.end();
     }
 
 
-    public void drawButtons() {
+    private void drawButtons() {
         for (int i = 0; i < buttons.length; i++) {
            buttons[i].setWord(choices[i].toString());
            buttons[i].draw(batcher);
@@ -55,14 +56,16 @@ public class TurtleJumpRenderer extends GameRenderer {
 
     @Override
     public boolean touchDown(int screenX, int screenY) {
-        if (bar.isMax()) {
-            game.setScreen(new TitleScreen(game));
-            return true;
-        }
         for (int i = 0; i < buttons.length; i++) {
             if (buttons[i].isClicked(screenX, screenY)) {
-                world.guess(choices[i]);
+                boolean answer = world.guess(choices[i]);
+                if (answer) {
+                    if (bar.isMax()) game.setScreen(new TitleScreen(game));
+                } else {
+
+                }
                 clock.setTime(world.getCorrectTime());
+                return true;
             }
         }
         return super.touchDown(screenX, screenY);
