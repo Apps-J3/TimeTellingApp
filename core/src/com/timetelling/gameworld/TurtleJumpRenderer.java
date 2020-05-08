@@ -33,7 +33,6 @@ public class TurtleJumpRenderer extends GameRenderer {
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.font, ((width/(buttons.length+2))/5)*2,width/12);
         }
-
     }
 
     @Override

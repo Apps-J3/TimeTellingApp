@@ -10,17 +10,17 @@ import com.timetelling.screens.TutorialScreen;
 
 public class TitleRenderer extends GameRenderer {
 
-    private SimpleButton levelsScreenButton;
-    private SimpleButton tutorialScreenButton;
-    private SimpleButton practiceScreenButton;
+    private ImgButton levelsScreenButton;
+    private ImgButton tutorialScreenButton;
+    private ImgButton practiceScreenButton;
     private ImgButton turtle;
     private ImgButton clock;
 
     public TitleRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
-        levelsScreenButton = new SimpleButton(width/4, height/8, width/2, height/4, "Play");
-        tutorialScreenButton = new SimpleButton(width/4, height*3/8, width/4, height/8, "Tutorial");
-        practiceScreenButton = new SimpleButton(width/2, height*3/8, width/4, height/8, "Practice");
+        levelsScreenButton = new ImgButton(width/4, height/8, width/2, height/4, "Play", AssetLoader.clouds,AssetLoader.font,0,0);
+        tutorialScreenButton = new ImgButton(width/4, height*3/8, width/4, height/8, "Tutorial", AssetLoader.clouds,AssetLoader.font,0,0);
+        practiceScreenButton = new ImgButton(width/2, height*3/8, width/4, height/8, "Practice", AssetLoader.clouds,AssetLoader.font,0,0);
         clock = new ImgButton(width/5,2*width/3,3*width/5,3*width/6,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
         turtle = new ImgButton(width/5, 2*width/3,width/4,width/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
     }

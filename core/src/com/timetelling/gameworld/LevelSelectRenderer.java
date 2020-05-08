@@ -1,24 +1,30 @@
 package com.timetelling.gameworld;
 
 import com.timetelling.game.TimeTellingGame;
+import com.timetelling.gameobjects.ImgButton;
 import com.timetelling.gameobjects.SimpleButton;
+import com.timetelling.helper.AssetLoader;
 import com.timetelling.helper.TimeGenerator;
 import com.timetelling.screens.GamemodeSelectScreen;
 import com.timetelling.screens.TurtleJumpScreen;
 
 public class LevelSelectRenderer extends GameRenderer {
 
-    private SimpleButton easyButton;
-    private SimpleButton mediumButton;
-    private SimpleButton hardButton;
-    private SimpleButton expertButton;
+    private ImgButton easyButton;
+    private ImgButton mediumButton;
+    private ImgButton hardButton;
+    private ImgButton expertButton;
+    private ImgButton clock;
+    private ImgButton turtle;
 
     public LevelSelectRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
-        easyButton = new SimpleButton(width/4, width/3, width/4, width/6, "Easy");
-        mediumButton = new SimpleButton(width/2, width/3, width/4, width/6, "Medium");
-        hardButton = new SimpleButton(width/4, width/6, width/4, width/6, "Hard");
-        expertButton = new SimpleButton(width/2, width/6, width/4, width/6, "Expert");
+        easyButton = new ImgButton(width/6, 2*width/5, width/3, width/4, "Easy", AssetLoader.clouds,AssetLoader.font, 0,0);
+        mediumButton = new ImgButton(3*width/6, 2*width/5, width/3, width/4, "Medium",AssetLoader.clouds,AssetLoader.font, 0,0);
+        hardButton = new ImgButton(width/6, width/7, width/3, width/4, "Hard",AssetLoader.clouds,AssetLoader.font, 0,0);
+        expertButton = new ImgButton(3*width/6, width/7, width/3, width/4, "Expert",AssetLoader.clouds,AssetLoader.font, 0,0);
+        clock = new ImgButton(width/5,2*width/3,3*width/5,3*width/6,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
+        turtle = new ImgButton(width/5, 2*width/3,width/4,width/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
     }
 
     public void render() {
@@ -28,6 +34,8 @@ public class LevelSelectRenderer extends GameRenderer {
         mediumButton.draw(batcher);
         hardButton.draw(batcher);
         expertButton.draw(batcher);
+        clock.draw(batcher);
+        turtle.draw(batcher);
         batcher.end();
     }
 
