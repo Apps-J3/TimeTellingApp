@@ -20,6 +20,9 @@ public class AssetLoader {
     public static Texture turtle;
     public static Texture green;
     public static Texture white;
+    public static Texture turtleJumpBackground;
+    public static Sprite turtleJumpBackgroundSprite;
+    public static Sprite turtleSprite;
     public static Texture titleClock;
     public static Texture clouds;
 
@@ -38,6 +41,8 @@ public class AssetLoader {
         green = new Texture(Gdx.files.internal("green.png"));
         titleClock = new Texture(Gdx.files.internal("titleClock.png"));
         clouds = new Texture(Gdx.files.internal("clouds.png"));
+        turtleJumpBackground = new Texture(Gdx.files.internal("mountain3.png"));
+        turtleJumpBackgroundSprite = new Sprite(turtleJumpBackground,Gdx.graphics.getWidth(), Gdx.graphics.getHeight()/2);
     }
 
     public static void dispose() {
