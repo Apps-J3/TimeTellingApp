@@ -11,6 +11,8 @@ import com.timetelling.helper.AssetLoader;
 import com.timetelling.screens.MovableClockScreen;
 import com.timetelling.screens.TitleScreen;
 
+import sun.java2d.pipe.SpanShapeRenderer;
+
 public class ClockDropRenderer extends GameRenderer {
 
     private ClockDropWorld world;
@@ -20,12 +22,15 @@ public class ClockDropRenderer extends GameRenderer {
     private ImgButton trashButton;
     private ImgButton turtleButton;
     private Time[] choices;
+    private SimpleButton displayButton;
+
 
     public ClockDropRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
         this.world = (ClockDropWorld)world;
-        trashButton = new ImgButton(width/6, width/4, width/3, width/3, "", AssetLoader.trash, AssetLoader.font, (width/5)*2,width/16);
-        turtleButton = new ImgButton(3*width/5, width/4, width/3, width/3, "", AssetLoader.turtle, AssetLoader.font, (width/5)*2,width/16);
+        trashButton = new ImgButton(width/6, width/10, width/3, width/3, "", AssetLoader.trash, AssetLoader.font, (width/5)*2,width/16);
+        turtleButton = new ImgButton(3*width/5, width/10, width/3, width/3, "", AssetLoader.turtle, AssetLoader.font, (width/5)*2,width/16);
+        displayButton = new SimpleButton(2*width/5,4*width/9,width/5,width/10,"");
         bar = this.world.getBar();
         font = AssetLoader.font;
         clock = new Clock(this.world.getClockTime());
@@ -45,6 +50,8 @@ public class ClockDropRenderer extends GameRenderer {
     private void drawButtons() {
         trashButton.draw(batcher);
         turtleButton.draw(batcher);
+        displayButton.setWord(this.world.getTargetTime().toString());
+        displayButton.draw(batcher);
     }
 
     @Override

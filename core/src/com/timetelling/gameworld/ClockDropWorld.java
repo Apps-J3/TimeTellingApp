@@ -10,11 +10,13 @@ public class ClockDropWorld extends GameWorld {
     private Time clockTime;
     private ProgressBar bar;
 
+
     public ClockDropWorld() {
         bar = new ProgressBar();
         targetTime = new Time();
         clockTime = new Time();
         initializeNewClock();
+
     }
 
     private void initializeNewClock() {
@@ -42,6 +44,7 @@ public class ClockDropWorld extends GameWorld {
         return false;
     }
 
+
     public Time getTargetTime() {
         return targetTime;
     }
@@ -53,4 +56,7 @@ public class ClockDropWorld extends GameWorld {
     public ProgressBar getBar() {
         return bar;
     }
+
 }
+
+

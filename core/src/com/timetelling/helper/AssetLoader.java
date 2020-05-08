@@ -20,6 +20,7 @@ public class AssetLoader {
     public static Texture turtle;
     public static Texture green;
     public static Texture white;
+    public static Texture titleClock;
 
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
@@ -34,6 +35,7 @@ public class AssetLoader {
         turtle = new Texture(Gdx.files.internal("turtle.png"));
         white = new Texture(Gdx.files.internal("white.png"));
         green = new Texture(Gdx.files.internal("green.png"));
+        titleClock = new Texture(Gdx.files.internal("titleClock.png"));
     }
 
     public static void dispose() {
