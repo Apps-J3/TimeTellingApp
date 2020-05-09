@@ -26,6 +26,7 @@ public class AssetLoader {
     public static Sprite turtleSprite;
     public static Texture titleClock;
     public static Texture clouds;
+    public static Texture turtleShadow;
 
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
@@ -39,11 +40,13 @@ public class AssetLoader {
         platform = new Texture(Gdx.files.internal("jumpPlatform.png"));
         trash = new Texture(Gdx.files.internal("trash.png"));
         turtle = new Texture(Gdx.files.internal("turtle.png"));
+        turtleShadow = new Texture(Gdx.files.internal("turtleShadow.png"));
+        turtleSprite = new Sprite(turtle, Gdx.graphics.getWidth()/6, Gdx.graphics.getHeight()/5);
         white = new Texture(Gdx.files.internal("white.png"));
         green = new Texture(Gdx.files.internal("green.png"));
         titleClock = new Texture(Gdx.files.internal("titleClock.png"));
         clouds = new Texture(Gdx.files.internal("clouds.png"));
-        turtleJumpBackground = new Texture(Gdx.files.internal("mountain3.png"));
+        turtleJumpBackground = new Texture(Gdx.files.internal("mountaintop.png"));
         turtleJumpBackgroundSprite = new Sprite(turtleJumpBackground,Gdx.graphics.getWidth(), Gdx.graphics.getHeight()/2);
     }
 
