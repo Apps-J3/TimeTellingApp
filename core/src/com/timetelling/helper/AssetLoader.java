@@ -1,6 +1,7 @@
 package com.timetelling.helper;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -34,6 +35,7 @@ public class AssetLoader {
         minuteHand = new Texture(Gdx.files.internal("blue.png"));
         hourHand = new Texture(Gdx.files.internal("red.png"));
         font = new BitmapFont(Gdx.files.internal("default.fnt"));
+        font.setColor(Color.BLACK);
         platform = new Texture(Gdx.files.internal("jumpPlatform.png"));
         trash = new Texture(Gdx.files.internal("trash.png"));
         turtle = new Texture(Gdx.files.internal("turtle.png"));

@@ -38,7 +38,7 @@ public class GameRenderer {
         shapeRenderer = new ShapeRenderer();
         shapeRenderer.setProjectionMatrix(cam.combined);
         background = AssetLoader.backgroundSprite;
-        backButton = new ImgButton(20, height-20-height/20, width/8, height/15, "Home", AssetLoader.clouds,AssetLoader.font,0,0);
+        backButton = new ImgButton(20, height-20-height/20, width/8, height/15, "Home", AssetLoader.clouds,AssetLoader.font,22,37);
     }
 
     public void render() {

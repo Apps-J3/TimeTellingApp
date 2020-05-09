@@ -18,9 +18,9 @@ public class GamemodeSelectRenderer extends GameRenderer{
 
     public GamemodeSelectRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
-        turtleJumpButton = new ImgButton(width/5, width/4, width/5, width/8, "Turtle Jump Game", AssetLoader.clouds, AssetLoader.font, 0,0);
-        clockDropButton = new ImgButton(2*width/5, width/4, width/5, width/8, "Clock Drop Game", AssetLoader.clouds, AssetLoader.font, 0,0);
-        movableClockButton = new ImgButton(3*width/5, width/4, width/5, width/8, "Movable Clock Game", AssetLoader.clouds, AssetLoader.font, 0,0);
+        turtleJumpButton = new ImgButton(width/14, width/4, width/4, width/6, "Turtle Jump Game", AssetLoader.clouds, AssetLoader.font, 20,70);
+        clockDropButton = new ImgButton(9*width/22, width/4, width/4, width/6, "Clock Drop Game", AssetLoader.clouds, AssetLoader.font, 25,70);
+        movableClockButton = new ImgButton(8*width/11, width/4, width/4, width/6, "Movable Clock Game", AssetLoader.clouds, AssetLoader.font,20,70);
         clock = new ImgButton(width/5,2*width/3,3*width/5,3*width/6,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
         turtle = new ImgButton(width/5, 2*width/3,width/4,width/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
     }

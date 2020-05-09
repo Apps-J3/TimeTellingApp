@@ -19,13 +19,13 @@ public class LevelSelectRenderer extends GameRenderer {
 
     public LevelSelectRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
-        easyButton = new ImgButton(width/6, 2*width/5, width/3, width/4, "Easy", AssetLoader.clouds,AssetLoader.font, 0,0);
-        mediumButton = new ImgButton(3*width/6, 2*width/5, width/3, width/4, "Medium",AssetLoader.clouds,AssetLoader.font, 0,0);
-        hardButton = new ImgButton(width/6, width/7, width/3, width/4, "Hard",AssetLoader.clouds,AssetLoader.font, 0,0);
-        expertButton = new ImgButton(3*width/6, width/7, width/3, width/4, "Expert",AssetLoader.clouds,AssetLoader.font, 0,0);
+        easyButton = new ImgButton(width/6, 2*width/5, width/3, width/4, "Easy", AssetLoader.clouds,AssetLoader.font, 100,100);
+        mediumButton = new ImgButton(3*width/6, 2*width/5, width/3, width/4, "Medium",AssetLoader.clouds,AssetLoader.font, 100,100);
+        hardButton = new ImgButton(width/6, width/7, width/3, width/4, "Hard",AssetLoader.clouds,AssetLoader.font, 100,100);
+        expertButton = new ImgButton(3*width/6, width/7, width/3, width/4, "Expert",AssetLoader.clouds,AssetLoader.font, 100,100);
         clock = new ImgButton(width/5,2*width/3,3*width/5,3*width/6,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
-        turtle = new ImgButton(width/5, 2*width/3,width/4,width/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
-    }
+    turtle = new ImgButton(width/5, 2*width/3,width/4,width/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
+}
 
     public void render() {
         super.render();
