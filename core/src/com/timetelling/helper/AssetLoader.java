@@ -16,6 +16,7 @@ public class AssetLoader {
     public static Texture minuteHand;
     public static Texture hourHand;
     public static BitmapFont font;
+    public static BitmapFont whiteFont;
     public static Texture platform;
     public static Texture trash;
     public static Texture turtle;
@@ -38,6 +39,7 @@ public class AssetLoader {
         hourHand = new Texture(Gdx.files.internal("red.png"));
         font = new BitmapFont(Gdx.files.internal("default.fnt"));
         font.setColor(Color.BLACK);
+        whiteFont = new BitmapFont(Gdx.files.internal("default.fnt"));
         platform = new Texture(Gdx.files.internal("jumpPlatform.png"));
         trash = new Texture(Gdx.files.internal("trash.png"));
         turtle = new Texture(Gdx.files.internal("turtle.png"));
