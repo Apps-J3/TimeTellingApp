@@ -11,8 +11,6 @@ import com.timetelling.helper.AssetLoader;
 import com.timetelling.screens.MovableClockScreen;
 import com.timetelling.screens.TitleScreen;
 
-import sun.java2d.pipe.SpanShapeRenderer;
-
 public class ClockDropRenderer extends GameRenderer {
 
     private ClockDropWorld world;
