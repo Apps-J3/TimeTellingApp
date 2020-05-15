@@ -40,14 +40,14 @@ public class TurtleJumpRenderer extends GameRenderer {
         choices = this.world.getChoices();
         background = AssetLoader.turtleJumpBackgroundSprite;
         turtle = AssetLoader.turtleShadow;
-        turtleMove = new ImgButton(17*width/40,height/10,width/6,height/5,"",AssetLoader.turtleShadow,AssetLoader.font,0,0);
+        turtleMove = new ImgButton(17*width/40,height/10,width/6,height/5,"",AssetLoader.turtleShadow,AssetLoader.font);
         buttons = new ImgButton[choices.length];
         font = AssetLoader.font;
-        infoMessage = new ImgButton(0,height/6, width/4,height/6,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font,0,0);
-        message = new ImgButton(7*width/10,height/6,width/4,height/6,"", AssetLoader.clouds, AssetLoader.font,0,0);
+        infoMessage = new ImgButton(0,height/6, width/4,height/6,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font);
+        message = new ImgButton(7*width/10,height/6,width/4,height/6,"", AssetLoader.clouds, AssetLoader.font);
         clock = new Clock(this.world.getCorrectTime());
         for (int i = 0; i < buttons.length; i++) {
-            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.whiteFont, ((width/(buttons.length+2))/5)*2,width/12);
+            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.font);
         }
     }
 

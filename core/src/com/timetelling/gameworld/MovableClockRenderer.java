@@ -92,7 +92,7 @@ public class MovableClockRenderer extends GameRenderer{
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
         if (clock.isPressed()) return clock.mouseMoved(screenX, screenY);
-        return true;
+        return false;
     }
 
     @Override

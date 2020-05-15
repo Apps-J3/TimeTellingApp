@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.utils.Align;
 import com.timetelling.helper.AssetLoader;
 
 public class ImgButton {
@@ -15,6 +16,7 @@ public class ImgButton {
     private String word;
     private BitmapFont font;
     private float textX, textY;
+    private float wrapPercentage;
 
     public ImgButton(float x, float y, float width, float height, String word, Texture texture, BitmapFont font, float textX, float textY) {
         this.word = word;
@@ -24,6 +26,22 @@ public class ImgButton {
         this.font = font;
         this.textX = textX;
         this.textY = textY;
+        wrapPercentage = 0;
+    }
+
+    public ImgButton(float x, float y, float width, float height, String word, Texture texture, BitmapFont font) {
+        this.word = word;
+        this.bounds = new Rectangle(x, y, width, height);
+        this.texture = texture;
+        isPressed = false;
+        this.font = font;
+        this.textX = 0;
+        this.textY = 0;
+        wrapPercentage = 0;
+    }
+
+    public void setWrapPercentage(float wrapPercentage) {
+        this.wrapPercentage = wrapPercentage;
     }
 
     public boolean isClicked(int screenX, int screenY) {
@@ -32,7 +50,7 @@ public class ImgButton {
 
     public void draw(SpriteBatch batcher) {
         batcher.draw(texture, bounds.x, bounds.y, bounds.width, bounds.height);
-        font.draw(batcher, word, bounds.x + textX, bounds.y + textY);
+        font.draw(batcher, word, bounds.x + textX + bounds.width*wrapPercentage/2, bounds.y + textY + bounds.height/2 + font.getCapHeight()/2, bounds.width*(1-wrapPercentage), Align.center, true);
     }
 
     public boolean isTouchDown(int screenX, int screenY) {

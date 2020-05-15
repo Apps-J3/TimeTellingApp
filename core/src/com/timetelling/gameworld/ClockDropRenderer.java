@@ -33,10 +33,10 @@ public class ClockDropRenderer extends GameRenderer {
     public ClockDropRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
         this.world = (ClockDropWorld)world;
-        trashButton = new ImgButton(width/5, height/11, width/4, height/5, "", AssetLoader.trash, AssetLoader.font, (width/5)*2,width/16);
-        turtleButton = new ImgButton(17*width/30, width/10, width/3, width/3, "", AssetLoader.turtleShadow, AssetLoader.font, (width/5)*2,width/16);
-        displayButton = new ImgButton(2*width/5,7*width/18,width/5,width/10, "", AssetLoader.clouds, AssetLoader.font, 0,0);
-        //displayButton = new SimpleButton(2*width/5,4*width/9,width/5,width/12,"");
+        trashButton = new ImgButton(width/6, width/10, width/3, width/3, "", AssetLoader.trash, AssetLoader.font);
+        turtleButton = new ImgButton(3*width/5, width/10, width/3, width/3, "", AssetLoader.turtle, AssetLoader.font);
+        displayButton = new ImgButton(2*width/5,4*width/9,width/5,width/10,"", AssetLoader.clouds, AssetLoader.font);
+        infoMessage = new ImgButton(0,height/2, width/4,height/6,"If the clock matches the time click the turtle, if not click the trash can", AssetLoader.clouds,AssetLoader.font);
         bar = this.world.getBar();
         errorMessage = "";
         instructions = "If the clock matches the time click the turtle, if not click the trash can";
@@ -54,7 +54,6 @@ public class ClockDropRenderer extends GameRenderer {
         font.draw(batcher, errorMessage, 17*width/30, height/15);
         font.draw(batcher, instructions, width/6, 31*height/72);
         drawButtons();
-        displayButton.draw(batcher);
         clock.setTime(world.getClockTime());
         clock.draw(batcher, width/2, 2*height/3, width/2);
         bar.draw(batcher, width/5, 9*height/10, 3*width/5, height/20);
@@ -65,8 +64,8 @@ public class ClockDropRenderer extends GameRenderer {
         trashButton.draw(batcher);
         turtleButton.draw(batcher);
         displayButton.setWord(this.world.getTargetTime().toString());
-        //displayButton.draw(batcher);
-        //infoMessage.draw(batcher);
+        displayButton.draw(batcher);
+        infoMessage.draw(batcher);
     }
 
     @Override
@@ -75,7 +74,7 @@ public class ClockDropRenderer extends GameRenderer {
         else if (trashButton.isClicked(screenX, screenY)) {
             boolean answer = world.pushTrash();
             if (answer) {
-                if (bar.isMax()) game.setScreen(new TitleScreen(game));
+                if (bar.isMax()) game.setScreen(new WinScreen(game));
             } else {
             }
         }
