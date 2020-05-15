@@ -9,6 +9,7 @@ import com.timetelling.gameobjects.ProgressBar;
 import com.timetelling.gameobjects.SimpleButton;
 import com.timetelling.helper.AssetLoader;
 import com.timetelling.screens.TitleScreen;
+import com.timetelling.screens.WinScreen;
 
 public class MovableClockRenderer extends GameRenderer{
 
@@ -25,17 +26,21 @@ public class MovableClockRenderer extends GameRenderer{
     private ImgButton turtleMove;
     private ImgButton platformMove;
     private int score;
+    private ImgButton finishLine;
+    private ImgButton startLine;
 
     public MovableClockRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
         clock = new MovableClock(width/2, 2*height/3, width/2);
         font = AssetLoader.font;
+        finishLine = new ImgButton(0, 4*height/5, width/4,height/25, "FINISH", AssetLoader.blackLine, AssetLoader.whiteFont, 0,0);
+        startLine = new ImgButton(0, 0, width/4, height/25, "START", AssetLoader.blackLine, AssetLoader.whiteFont,0,0);
         score = 0;
         platform = AssetLoader.platform;
         turtleMove = new ImgButton(0, height/8, 5*width/20, height/4, "", AssetLoader.turtleShadow, AssetLoader.font, 0,0);
         platformMove = new ImgButton(0, height/50, width/4,width/6, "", AssetLoader.platform, AssetLoader.font,0,0);
         //submitButton = new SimpleButton(width/2, height/5, width/3, height/8, "Submit Time");
-        submitButton = new ImgButton(width/2, height/5, width/3, height/6, "Submit Time", AssetLoader.clouds, AssetLoader.font,0,0);
+        submitButton = new ImgButton(width/2, height/5, width/3, height/6, "Submit Time", AssetLoader.clouds, AssetLoader.font,width/9,height/10);
         turtle = AssetLoader.turtleShadow;
         this.world = (MovableClockWorld)world;
         this.world.setClock(clock);
@@ -51,11 +56,11 @@ public class MovableClockRenderer extends GameRenderer{
         clock.draw(batcher);
         platformMove.draw(batcher);
         turtleMove.draw(batcher);
-        //batcher.draw(platform,width/6, height/50, width/4,width/6);
-        //batcher.draw(turtle, width/7, height/8, 5*width/20, height/4);
+        finishLine.draw(batcher);
+        startLine.draw(batcher);
         submitButton.draw(batcher);
-        font.draw(batcher, message, width/6, 3*height/8);
-        font.draw(batcher, errorMessage, width/2, 14*height/40);
+        font.draw(batcher, message, 5*width/12, 5*height/12);
+        font.draw(batcher, errorMessage, width/2, height/5);
         bar.draw(batcher, width/5, 9*height/10, 3*width/5, height/20);
         batcher.end();
     }
@@ -67,7 +72,7 @@ public class MovableClockRenderer extends GameRenderer{
         } else if (submitButton.isClicked(screenX, screenY)) {
             boolean answer = world.submit();
             if (answer) {
-                if (bar.isMax()) game.setScreen(new TitleScreen(game));
+                if (bar.isMax()) game.setScreen(new WinScreen(game));
                 message = "Set the clock to " + this.world.getTargetTime().toString();
                 errorMessage = "Nice Job!";
                 score += 1;

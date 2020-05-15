@@ -15,6 +15,7 @@ import com.timetelling.gameobjects.Time;
 import com.timetelling.helper.AssetLoader;
 import com.timetelling.screens.ClockDropScreen;
 import com.timetelling.screens.TitleScreen;
+import com.timetelling.screens.WinScreen;
 
 public class TurtleJumpRenderer extends GameRenderer {
 
@@ -78,7 +79,7 @@ public class TurtleJumpRenderer extends GameRenderer {
             if (buttons[i].isClicked(screenX, screenY)) {
                 boolean answer = world.guess(choices[i]);
                 if (answer) {
-                    if (bar.isMax()) game.setScreen(new TitleScreen(game));
+                    if (bar.isMax()) game.setScreen(new WinScreen(game));
                     infoMessage = new ImgButton(0,height/6, width/4,height/6,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font,0,0);
                     message = new ImgButton(7*width/10,height/6,width/4,height/6,"Great job!",AssetLoader.clouds,AssetLoader.font,0,0);
                     turtleMove = new ImgButton((i+1)*width/(buttons.length+2),7*width/15,width/6,height/5,"", AssetLoader.turtleShadow, AssetLoader.font,0,0);                }
