@@ -13,14 +13,16 @@ public class WinRenderer extends GameRenderer {
     private String message;
     private BitmapFont font;
     private ImgButton bubble;
+    private ImgButton confetti;
 
     public WinRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
         background = AssetLoader.backgroundSprite;
-        font = AssetLoader.font;
-        turtle = new ImgButton(0,0 ,width/3,height/2,"", AssetLoader.turtle,AssetLoader.font);
-        bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font);
-        message= "Congartulations you passed the level!";
+        font = AssetLoader.bigBlackFont;
+        turtle = new ImgButton(0,0 ,width/3,height/2,"", AssetLoader.turtle,AssetLoader.font,0, 0);
+        bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font,0,0);
+        message= "Congratulations you passed the level!";
+        confetti = new ImgButton(0,height/3,width,2*height/3,"",AssetLoader.confetti,AssetLoader.font);
     }
 
     @Override
@@ -29,7 +31,8 @@ public class WinRenderer extends GameRenderer {
         batcher.begin();
         turtle.draw(batcher);
         bubble.draw(batcher);
-        font.draw(batcher, message, width/3, 2*height/3);
+        confetti.draw(batcher);
+        font.draw(batcher, message, width/6, 2*height/3);
         batcher.end();
 
     }

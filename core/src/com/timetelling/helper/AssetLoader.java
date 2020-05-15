@@ -17,6 +17,7 @@ public class AssetLoader {
     public static Texture hourHand;
     public static BitmapFont font;
     public static BitmapFont whiteFont;
+    public static BitmapFont bigBlackFont;
     public static Texture platform;
     public static Texture trash;
     public static Texture turtle;
@@ -30,6 +31,7 @@ public class AssetLoader {
     public static Texture turtleShadow;
     public static Texture blackLine;
     public static Texture bubble;
+    public static Texture confetti;
 
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
@@ -54,6 +56,11 @@ public class AssetLoader {
         turtleJumpBackgroundSprite = new Sprite(turtleJumpBackground,Gdx.graphics.getWidth(), Gdx.graphics.getHeight()/2);
         blackLine = new Texture(Gdx.files.internal("blackRectangle.png"));
         bubble= new Texture(Gdx.files.internal("bubble.png"));
+        confetti = new Texture(Gdx.files.internal("confetti.png"));
+        bigBlackFont = new BitmapFont(Gdx.files.internal("default.fnt"));
+        bigBlackFont.setColor(Color.BLACK);
+        bigBlackFont.getData().setScale(2);
+
     }
 
     public static void dispose() {

@@ -21,8 +21,8 @@ public class LevelSelectRenderer extends GameRenderer {
         super(world, game);
         easyButton = new ImgButton(width/6, height/4, width/3, height/5, "Easy", AssetLoader.clouds,AssetLoader.font, 0,0);
         mediumButton = new ImgButton(3*width/6, height/4, width/3, height/5, "Medium",AssetLoader.clouds,AssetLoader.font, 0,0);
-        hardButton = new ImgButton(width/6, height/14, width/3, height/5, "Hard",AssetLoader.clouds,AssetLoader.font, 0,0);
-        expertButton = new ImgButton(3*width/6, height/14, width/3, height/5, "Expert",AssetLoader.clouds,AssetLoader.font, 0,0);
+        hardButton = new ImgButton(width/6, height/20, width/3, height/5, "Hard",AssetLoader.clouds,AssetLoader.font, 0,0);
+        expertButton = new ImgButton(3*width/6, height/20, width/3, height/5, "Expert",AssetLoader.clouds,AssetLoader.font, 0,0);
         clock = new ImgButton(width/5,height/2,3*width/5,2*height/5,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
         turtle = new ImgButton(width/5, height/2,width/4,height/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
     }
