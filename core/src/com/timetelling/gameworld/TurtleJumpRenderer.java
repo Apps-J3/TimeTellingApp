@@ -67,6 +67,7 @@ public class TurtleJumpRenderer extends GameRenderer {
 
 
     private void drawButtons() {
+        choices = world.getChoices();
         for (int i = 0; i < buttons.length; i++) {
            buttons[i].setWord(choices[i].toString());
            buttons[i].draw(batcher);

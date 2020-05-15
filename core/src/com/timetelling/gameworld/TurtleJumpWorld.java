@@ -20,12 +20,8 @@ public class TurtleJumpWorld extends GameWorld {
     }
 
     public void setTimes() {
-        correctTime = TimeGenerator.generateTime();
-        for (int i = 0; i < choices.length; i++) {
-            choices[i] = TimeGenerator.generateTime();
-        }
-        int rand = (int)(Math.random()*choices.length);
-        choices[rand] = correctTime;
+        choices = TimeGenerator.generateTimes(3);
+        correctTime = choices[(int)(Math.random()*3)];
     }
 
     public boolean guess(Time time) {

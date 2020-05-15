@@ -21,7 +21,6 @@ public class WinRenderer extends GameRenderer {
         turtle = new ImgButton(0,0 ,width/3,height/2,"", AssetLoader.turtle,AssetLoader.font);
         bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font);
         message= "Congartulations you passed the level!";
-
     }
 
     @Override
