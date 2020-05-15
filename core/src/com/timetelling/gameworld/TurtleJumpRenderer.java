@@ -28,7 +28,7 @@ public class TurtleJumpRenderer extends GameRenderer {
     private BitmapFont font;
     private ImgButton message;
     private ImgButton infoMessage;
-    private Sprite background;
+    private Texture mountain;
     private Texture turtle;
     private ImgButton turtleMove;
 
@@ -38,7 +38,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         this.world = (TurtleJumpWorld)world;
         bar = this.world.getBar();
         choices = this.world.getChoices();
-        background = AssetLoader.turtleJumpBackgroundSprite;
+        mountain = AssetLoader.turtleJumpBackground;
         turtle = AssetLoader.turtleShadow;
         turtleMove = new ImgButton(17*width/40,height/10,width/6,height/5,"",AssetLoader.turtleShadow,AssetLoader.font);
         buttons = new ImgButton[choices.length];
@@ -55,7 +55,7 @@ public class TurtleJumpRenderer extends GameRenderer {
     public void render() {
         super.render();
         batcher.begin();
-        batcher.draw(background,width/50,0);
+        batcher.draw(mountain, 0, 0, width, height/2);
         drawButtons();
         clock.draw(batcher, width/2, 2*height/3, width/2);
         infoMessage.draw(batcher);
