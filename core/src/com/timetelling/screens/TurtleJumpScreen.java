@@ -7,7 +7,6 @@ import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.gameworld.TurtleJumpRenderer;
 import com.timetelling.gameworld.TurtleJumpWorld;
-import com.timetelling.gameworld.TutorialWorld;
 import com.timetelling.helper.InputHandler;
 
 public class TurtleJumpScreen implements Screen {

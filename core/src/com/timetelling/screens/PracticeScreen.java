@@ -6,7 +6,6 @@ import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.gameworld.PracticeRenderer;
-import com.timetelling.gameworld.PracticeWorld;
 import com.timetelling.helper.InputHandler;
 
 public class PracticeScreen implements Screen {
@@ -18,7 +17,7 @@ public class PracticeScreen implements Screen {
     public PracticeScreen(TimeTellingGame game) {
         this.game = game;
         Gdx.app.log("PracticeScreen", "Created");
-        world = new PracticeWorld();
+        world = new GameWorld();
         renderer = new PracticeRenderer(world, game);
         Gdx.input.setInputProcessor(new InputHandler(world, renderer));
     }

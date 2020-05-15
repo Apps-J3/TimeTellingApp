@@ -5,10 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
-import com.timetelling.gameworld.MovableClockRenderer;
-import com.timetelling.gameworld.MovableClockWorld;
 import com.timetelling.gameworld.WinRenderer;
-import com.timetelling.gameworld.WinWorld;
 import com.timetelling.helper.InputHandler;
 
 public class WinScreen implements Screen {
@@ -20,7 +17,7 @@ public class WinScreen implements Screen {
     public WinScreen(TimeTellingGame game) {
         this.game = game;
         Gdx.app.log("MovableClockScreen", "Created");
-        world = new WinWorld();
+        world = new GameWorld();
         renderer = new WinRenderer(world, game);
         Gdx.input.setInputProcessor(new InputHandler(world, renderer));
     }

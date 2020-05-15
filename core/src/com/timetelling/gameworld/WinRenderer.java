@@ -8,7 +8,6 @@ import com.timetelling.helper.AssetLoader;
 
 public class WinRenderer extends GameRenderer {
 
-    private Sprite background;
     private ImgButton turtle;
     private String message;
     private BitmapFont font;
@@ -17,10 +16,9 @@ public class WinRenderer extends GameRenderer {
 
     public WinRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
-        background = AssetLoader.backgroundSprite;
         font = AssetLoader.bigBlackFont;
         turtle = new ImgButton(0,0 ,width/3,height/2,"", AssetLoader.turtle,AssetLoader.font,0, 0);
-        bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font,0,0);
+        bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font,width/160, height/100);
         message= "Congratulations you passed the level!";
         confetti = new ImgButton(0,height/3,width,2*height/3,"",AssetLoader.confetti,AssetLoader.font);
     }
