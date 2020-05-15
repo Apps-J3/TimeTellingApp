@@ -18,11 +18,11 @@ public class TitleRenderer extends GameRenderer {
 
     public TitleRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
-        levelsScreenButton = new ImgButton(width/4, height/8, width/2, height/4, "Play", AssetLoader.clouds,AssetLoader.font,165,115);
-        tutorialScreenButton = new ImgButton(width/4, height*3/8, width/4, height/8, "Tutorial", AssetLoader.clouds,AssetLoader.font,63,65);
-        practiceScreenButton = new ImgButton(width/2, height*3/8, width/4, height/8, "Practice", AssetLoader.clouds,AssetLoader.font,63,65);
-        clock = new ImgButton(width/5,2*width/3,3*width/5,3*width/6,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
-        turtle = new ImgButton(width/5, 2*width/3,width/4,width/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
+        levelsScreenButton = new ImgButton(width/4, height/8, width/2, height/4, "Play", AssetLoader.clouds,AssetLoader.font,0,0);
+        tutorialScreenButton = new ImgButton(width/4, height*3/8, width/4, height/8, "Tutorial", AssetLoader.clouds,AssetLoader.font,0,0);
+        practiceScreenButton = new ImgButton(width/2, height*3/8, width/4, height/8, "Practice", AssetLoader.clouds,AssetLoader.font,0,0);
+        clock = new ImgButton(width/5,height/2,3*width/5,2*height/5,"", AssetLoader.titleClock, AssetLoader.font, 0,0);
+        turtle = new ImgButton(width/5, height/2,width/4,height/3,"",AssetLoader.turtle,AssetLoader.font,0, 0);
     }
 
     @Override

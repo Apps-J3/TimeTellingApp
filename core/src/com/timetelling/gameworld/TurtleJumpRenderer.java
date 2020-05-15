@@ -47,7 +47,7 @@ public class TurtleJumpRenderer extends GameRenderer {
         message = new ImgButton(7*width/10,height/6,width/4,height/6,"", AssetLoader.clouds, AssetLoader.font,0,0);
         clock = new Clock(this.world.getCorrectTime());
         for (int i = 0; i < buttons.length; i++) {
-            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.font, ((width/(buttons.length+2))/5)*2,width/12);
+            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.whiteFont, ((width/(buttons.length+2))/5)*2,width/12);
         }
     }
 

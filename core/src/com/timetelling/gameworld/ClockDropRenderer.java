@@ -22,7 +22,6 @@ public class ClockDropRenderer extends GameRenderer {
     private ImgButton trashButton;
     private ImgButton turtleButton;
     private Time[] choices;
-    //private SimpleButton displayButton;
     private ImgButton displayButton;
     private ImgButton infoMessage;
     private Texture platform;
@@ -59,7 +58,6 @@ public class ClockDropRenderer extends GameRenderer {
         clock.setTime(world.getClockTime());
         clock.draw(batcher, width/2, 2*height/3, width/2);
         bar.draw(batcher, width/5, 9*height/10, 3*width/5, height/20);
-
         batcher.end();
     }
 
@@ -77,11 +75,8 @@ public class ClockDropRenderer extends GameRenderer {
         else if (trashButton.isClicked(screenX, screenY)) {
             boolean answer = world.pushTrash();
             if (answer) {
-                if (bar.isMax()) game.setScreen(new WinScreen(game));
-                errorMessage = "Nice Job!";
-            }
-            else {
-                errorMessage = "Oops, try again";
+                if (bar.isMax()) game.setScreen(new TitleScreen(game));
+            } else {
             }
         }
         else if(turtleButton.isClicked(screenX, screenY)) world.pushTurtle();

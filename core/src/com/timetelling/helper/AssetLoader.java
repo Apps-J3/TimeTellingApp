@@ -29,6 +29,7 @@ public class AssetLoader {
     public static Texture clouds;
     public static Texture turtleShadow;
     public static Texture blackLine;
+    public static Texture bubble;
 
     public static void load() {
         skin = new Skin(Gdx.files.internal("uiskin.json"));
@@ -52,6 +53,7 @@ public class AssetLoader {
         turtleJumpBackground = new Texture(Gdx.files.internal("mountaintop.png"));
         turtleJumpBackgroundSprite = new Sprite(turtleJumpBackground,Gdx.graphics.getWidth(), Gdx.graphics.getHeight()/2);
         blackLine = new Texture(Gdx.files.internal("blackRectangle.png"));
+        bubble= new Texture(Gdx.files.internal("bubble.png"));
     }
 
     public static void dispose() {
