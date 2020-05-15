@@ -18,8 +18,8 @@ public class WinRenderer extends GameRenderer {
         super(world, game);
         background = AssetLoader.backgroundSprite;
         font = AssetLoader.font;
-        turtle = new ImgButton(0,0 ,width/3,height/2,"", AssetLoader.turtle,AssetLoader.font,0, 0);
-        bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font,0,0);
+        turtle = new ImgButton(0,0 ,width/3,height/2,"", AssetLoader.turtle,AssetLoader.font);
+        bubble = new ImgButton(width/4, height/3,width/4,height/7,"Great Job!",AssetLoader.bubble,AssetLoader.font);
         message= "Congartulations you passed the level!";
 
     }
