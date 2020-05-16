@@ -2,12 +2,10 @@ package com.timetelling.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.gameworld.TitleRenderer;
-import com.timetelling.gameworld.TitleWorld;
 import com.timetelling.helper.InputHandler;
 
 public class TitleScreen implements Screen {
@@ -19,7 +17,7 @@ public class TitleScreen implements Screen {
     public TitleScreen(TimeTellingGame game) {
         this.game = game;
         Gdx.app.log("TitleScreen", "Created");
-        world = new TitleWorld();
+        world = new GameWorld();
         renderer = new TitleRenderer(world, game);
         Gdx.input.setInputProcessor(new InputHandler(world, renderer));
     }

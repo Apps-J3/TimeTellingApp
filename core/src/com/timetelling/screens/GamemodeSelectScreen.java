@@ -6,8 +6,6 @@ import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.gameworld.GamemodeSelectRenderer;
-import com.timetelling.gameworld.LevelSelectRenderer;
-import com.timetelling.gameworld.LevelSelectWorld;
 import com.timetelling.helper.InputHandler;
 
 public class GamemodeSelectScreen implements Screen {

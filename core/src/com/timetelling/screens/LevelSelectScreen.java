@@ -6,7 +6,6 @@ import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.gameworld.LevelSelectRenderer;
-import com.timetelling.gameworld.LevelSelectWorld;
 import com.timetelling.helper.InputHandler;
 
 public class LevelSelectScreen implements Screen {
@@ -18,7 +17,7 @@ public class LevelSelectScreen implements Screen {
     public LevelSelectScreen(TimeTellingGame game) {
         this.game = game;
         Gdx.app.log("LevelSelectScreen", "Created");
-        world = new LevelSelectWorld();
+        world = new GameWorld();
         renderer = new LevelSelectRenderer(world, game);
         Gdx.input.setInputProcessor(new InputHandler(world, renderer));
     }

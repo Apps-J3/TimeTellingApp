@@ -6,7 +6,6 @@ import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameworld.GameRenderer;
 import com.timetelling.gameworld.GameWorld;
 import com.timetelling.gameworld.TutorialRenderer;
-import com.timetelling.gameworld.TutorialWorld;
 import com.timetelling.helper.InputHandler;
 
 public class TutorialScreen implements Screen {
@@ -18,7 +17,7 @@ public class TutorialScreen implements Screen {
     public TutorialScreen(TimeTellingGame game) {
         this.game = game;
         Gdx.app.log("TutorialScreen", "Created");
-        world = new TutorialWorld();
+        world = new GameWorld();
         renderer = new TutorialRenderer(world, game);
         Gdx.input.setInputProcessor(new InputHandler(world, renderer));
     }

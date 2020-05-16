@@ -33,7 +33,7 @@ public class WinRenderer extends GameRenderer {
         turtle.draw(batcher);
         bubble.draw(batcher);
         confetti.draw(batcher);
-        font.draw(batcher, message, 0, 2*height/3,width/2, Align.center,true);
+        font.draw(batcher, message, width/4, 2*height/3, width/2, Align.center, true);
         batcher.end();
 
     }

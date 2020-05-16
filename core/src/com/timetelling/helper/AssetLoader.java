@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 public class AssetLoader {
 
     public static Skin skin;
-    private static Texture background;
+    public static Texture background;
     public static Sprite backgroundSprite;
     public static Texture clock;
     public static Texture minuteHand;
@@ -42,7 +42,9 @@ public class AssetLoader {
         hourHand = new Texture(Gdx.files.internal("red.png"));
         font = new BitmapFont(Gdx.files.internal("default.fnt"));
         font.setColor(Color.BLACK);
+        font.getData().setScale(Gdx.graphics.getHeight()/64/font.getCapHeight());
         whiteFont = new BitmapFont(Gdx.files.internal("default.fnt"));
+        whiteFont.getData().setScale(Gdx.graphics.getHeight()/64/whiteFont.getCapHeight());
         platform = new Texture(Gdx.files.internal("jumpPlatform.png"));
         trash = new Texture(Gdx.files.internal("trash.png"));
         turtle = new Texture(Gdx.files.internal("turtle.png"));
@@ -59,8 +61,7 @@ public class AssetLoader {
         confetti = new Texture(Gdx.files.internal("confetti.png"));
         bigBlackFont = new BitmapFont(Gdx.files.internal("default.fnt"));
         bigBlackFont.setColor(Color.BLACK);
-        bigBlackFont.getData().setScale(2);
-
+        bigBlackFont.getData().setScale(2*Gdx.graphics.getHeight()/64/bigBlackFont.getCapHeight());
     }
 
     public static void dispose() {
