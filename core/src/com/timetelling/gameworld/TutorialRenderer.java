@@ -59,7 +59,7 @@ public class TutorialRenderer extends GameRenderer {
         font.draw(batcher,easyMessage,0, 2*height/5);
         font.draw(batcher,mediumMessage,3*width/5, 2*height/5);
         font.draw(batcher,hardMessage,0, height/8);
-        font.draw(batcher,easyMessage,3*width/5, height/8);
+        font.draw(batcher,expertMessage,3*width/5, height/8);
         batcher.end();
     }
 }
