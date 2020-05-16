@@ -2,6 +2,7 @@ package com.timetelling.gameworld;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.utils.Align;
 import com.timetelling.game.TimeTellingGame;
 import com.timetelling.gameobjects.ImgButton;
 import com.timetelling.helper.AssetLoader;
@@ -32,7 +33,7 @@ public class WinRenderer extends GameRenderer {
         turtle.draw(batcher);
         bubble.draw(batcher);
         confetti.draw(batcher);
-        font.draw(batcher, message, width/6, 2*height/3);
+        font.draw(batcher, message, 0, 2*height/3,width/2, Align.center,true);
         batcher.end();
 
     }
