@@ -40,7 +40,10 @@ public class TutorialRenderer extends GameRenderer {
         font = AssetLoader.font;
         hourTutorial = "The hour hand, shorter hand, on the clock signifies what hour of the day it is. If the hour hand falls between two numbers the hour is always the number that the hand has just passed. For example, if the hand is between 3 o’clock and 4 o’clock the hour is 3 o’clock.";
         minuteTutorial = "The minute hand, longer hand, on the clock shows the minutes of each hour. It goes around the clock once every 60 minutes. Each tick mark on the clock (there are 60 for 60 minutes in an hour) counts for one minute.";
-
+        easyMessage = "The time shown on the clock is 3:00";
+        mediumMessage="The time shown on the clock is 4:10";
+        hardMessage= "The time shown on the clock is 6:55";
+        expertMessage= "The time shown on the clock is 7:38";
     }
 
     public void render() {
@@ -53,6 +56,10 @@ public class TutorialRenderer extends GameRenderer {
         mediumClock.draw(batcher, 4*width/5,height/2,width/5);
         hardClock.draw(batcher, width/5, height/4,width/5);
         expertClock.draw(batcher,4*width/5,height/4,width/5);
+        font.draw(batcher,easyMessage,0, 2*height/5);
+        font.draw(batcher,mediumMessage,3*width/5, 2*height/5);
+        font.draw(batcher,hardMessage,0, height/8);
+        font.draw(batcher,easyMessage,3*width/5, height/8);
         batcher.end();
     }
 }
