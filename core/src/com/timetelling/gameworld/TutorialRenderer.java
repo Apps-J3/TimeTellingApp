@@ -57,9 +57,9 @@ public class TutorialRenderer extends GameRenderer {
         hardClock.draw(batcher, width/5, height/4,width/5);
         expertClock.draw(batcher,4*width/5,height/4,width/5);
         font.draw(batcher,easyMessage,0, 2*height/5);
-        font.draw(batcher,mediumMessage,3*width/5, 2*height/5);
+        font.draw(batcher,mediumMessage,1*width/2, 2*height/5);
         font.draw(batcher,hardMessage,0, height/8);
-        font.draw(batcher,expertMessage,3*width/5, height/8);
+        font.draw(batcher,expertMessage,1*width/2, height/8);
         batcher.end();
     }
 }
