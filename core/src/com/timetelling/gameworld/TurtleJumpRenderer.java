@@ -43,6 +43,10 @@ public class TurtleJumpRenderer extends GameRenderer {
         turtleMove = new ImgButton(17*width/40,height/10,width/6,height/6,"",AssetLoader.turtleShadow,AssetLoader.font);
         buttons = new ImgButton[choices.length];
         font = AssetLoader.font;
+        infoMessage = new ImgButton(0,height/6, width/4,height/6,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font);
+        infoMessage.setWrapPercentage(0.1f);
+        message = new ImgButton(7*width/10,height/6,width/4,height/6,"", AssetLoader.clouds, AssetLoader.font);
+        message.setWrapPercentage(0.3f);
         infoMessage = new ImgButton(0,height/8, width/4,height/7,"Click the corresponding time", AssetLoader.clouds, AssetLoader.font);
         message = new ImgButton(7*width/10,height/8,width/4,height/7,"", AssetLoader.clouds, AssetLoader.font);
         clock = new Clock(this.world.getCorrectTime());
@@ -81,11 +85,10 @@ public class TurtleJumpRenderer extends GameRenderer {
                 boolean answer = world.guess(choices[i]);
                 if (answer) {
                     if (bar.isMax()) game.setScreen(new WinScreen(game));
-                    infoMessage = new ImgButton(0,height/8, width/4,height/7,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font,0,0);
-                    message = new ImgButton(7*width/10,height/8,width/4,height/7,"Great job!",AssetLoader.clouds,AssetLoader.font,0,0);
+                    message.setWord("Great job!");
                     turtleMove = new ImgButton((i+1)*width/(buttons.length+2),17*height/54,width/6,height/6,"", AssetLoader.turtleShadow, AssetLoader.font,0,0);                }
                 else {
-                    message = new ImgButton(7*width/10,height/8,width/4,height/7,"Oops, the correct time is " + this.world.getCorrectTime().toString(),AssetLoader.clouds,AssetLoader.font,0,0);
+                    message.setWord("Oops, the correct time is " + this.world.getCorrectTime().toString());
                     turtleMove = new ImgButton(17*width/40,height/10,width/6,height/6,"", AssetLoader.turtleShadow, AssetLoader.font, 0,0);
                 }
                 clock.setTime(world.getCorrectTime());

@@ -74,6 +74,7 @@ public class MovableClock extends Clock {
         if (handPressed == 1) {
             int hour = (int)((theta + 360)/30)+1;
             hour = 12-hour;
+            if (hour==0) hour = 12;
             setTime(new Time(hour, getTime().getMinutes()));
         }
         else if (handPressed == 2) {

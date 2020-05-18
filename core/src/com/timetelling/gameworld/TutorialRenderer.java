@@ -33,7 +33,7 @@ public class TutorialRenderer extends GameRenderer {
         easyClock = new Clock(new Time(3,0) );
         mediumClock= new Clock(new Time(4,15));
         hardClock = new Clock(new Time(6,55));
-        expertClock= new Clock(new Time(7,38));
+        expertClock= new Clock(new Time(7,48));
         background = AssetLoader.backgroundSprite;
         title = "Tutorial page";
         titleFont = AssetLoader.bigBlackFont;
@@ -43,13 +43,13 @@ public class TutorialRenderer extends GameRenderer {
         easyMessage = "The time shown on the clock is 3:00";
         mediumMessage="The time shown on the clock is 4:10";
         hardMessage= "The time shown on the clock is 6:55";
-        expertMessage= "The time shown on the clock is 7:38";
+        expertMessage= "The time shown on the clock is 7:48";
     }
 
     public void render() {
         super.render();
         batcher.begin();
-        titleFont.draw(batcher,title,0,8*height/9,width/2,Align.center,true);
+        titleFont.draw(batcher,title,0,8*height/9,width,Align.center,true);
         font.draw(batcher,hourTutorial,0,7*height/9,width, Align.center,true);
         font.draw(batcher,minuteTutorial,0,6*height/9,width,Align.center,true);
         easyClock.draw(batcher,width/4,height/2,width/5);
