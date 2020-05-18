@@ -32,9 +32,9 @@ public class ClockDropRenderer extends GameRenderer {
     public ClockDropRenderer(GameWorld world, TimeTellingGame game) {
         super(world, game);
         this.world = (ClockDropWorld)world;
-        trashButton = new ImgButton(5*width/24, width/10, width/4, height/5, "", AssetLoader.trash, AssetLoader.font);
-        turtleButton = new ImgButton(25*width/45, width/10, width/3, height/4, "", AssetLoader.turtleShadow, AssetLoader.font);
-        displayButton = new ImgButton(2*width/5,3*width/9,width/5,height/10,"", AssetLoader.clouds, AssetLoader.font);
+        trashButton = new ImgButton(5*width/24, height/11, width/4, height/5, "", AssetLoader.trash, AssetLoader.font);
+        turtleButton = new ImgButton(25*width/45, height/12, width/3, height/4, "", AssetLoader.turtleShadow, AssetLoader.font);
+        displayButton = new ImgButton(2*width/5,7*height/24,width/5,height/10,"", AssetLoader.clouds, AssetLoader.font);
         infoMessage = new ImgButton(0,height/2, width/4,height/6,"", AssetLoader.clouds,AssetLoader.font);
         bar = this.world.getBar();
         instructions = "If the clock matches the time click the turtle, if not click the trash can";

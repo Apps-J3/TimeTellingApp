@@ -36,8 +36,8 @@ public class MovableClockRenderer extends GameRenderer{
         startLine = new ImgButton(0, 0, width/4, height/25, "START", AssetLoader.blackLine, AssetLoader.whiteFont);
         score = 0;
         platform = AssetLoader.platform;
-        turtleMove = new ImgButton(0, height/8, 5*width/20, height/4, "", AssetLoader.turtleShadow, AssetLoader.font);
-        platformMove = new ImgButton(0, height/50, width/4,width/6, "", AssetLoader.platform, AssetLoader.font);
+        turtleMove = new ImgButton(0, height/10, 5*width/20, height/4, "", AssetLoader.turtleShadow, AssetLoader.font);
+        platformMove = new ImgButton(0, height/35, width/4,height/10, "", AssetLoader.platform, AssetLoader.font);
         submitButton = new ImgButton(width/2, height/5, width/3, height/6, "Submit Time", AssetLoader.clouds, AssetLoader.font);
         turtle = AssetLoader.turtleShadow;
         this.world = (MovableClockWorld)world;
@@ -74,8 +74,8 @@ public class MovableClockRenderer extends GameRenderer{
                 message = "Set the clock to " + this.world.getTargetTime().toString();
                 errorMessage = "Nice Job!";
                 score += 1;
-                turtleMove = new ImgButton(0, height / 8 + height * score / 20, 5 * width / 20, height / 4, "", AssetLoader.turtleShadow, AssetLoader.font, 0, 0);
-                platformMove = new ImgButton(0, height / 50 + height * score / 20, width / 4, width / 6, "", AssetLoader.platform, AssetLoader.font, 0, 0);
+                turtleMove = new ImgButton(0, height / 10 + height * score / 20, 5 * width / 20, height / 4, "", AssetLoader.turtleShadow, AssetLoader.font, 0, 0);
+                platformMove = new ImgButton(0, height / 35 + height * score / 20, width / 4, height/10, "", AssetLoader.platform, AssetLoader.font, 0, 0);
             }
             else {
                 errorMessage = "Oops! You set the time to " + clock.getTime();
