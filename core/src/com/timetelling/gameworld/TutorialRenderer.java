@@ -52,14 +52,14 @@ public class TutorialRenderer extends GameRenderer {
         titleFont.draw(batcher,title,0,8*height/9,width/2,Align.center,true);
         font.draw(batcher,hourTutorial,0,7*height/9,width, Align.center,true);
         font.draw(batcher,minuteTutorial,0,6*height/9,width,Align.center,true);
-        easyClock.draw(batcher,width/5,height/2,width/5);
-        mediumClock.draw(batcher, 4*width/5,height/2,width/5);
-        hardClock.draw(batcher, width/5, height/4,width/5);
-        expertClock.draw(batcher,4*width/5,height/4,width/5);
-        font.draw(batcher,easyMessage,0, 2*height/5);
-        font.draw(batcher,mediumMessage,1*width/2, 2*height/5);
-        font.draw(batcher,hardMessage,0, height/8);
-        font.draw(batcher,expertMessage,1*width/2, height/8);
+        easyClock.draw(batcher,width/4,height/2,width/5);
+        mediumClock.draw(batcher, 3*width/4,height/2,width/5);
+        hardClock.draw(batcher, width/4, height/4,width/5);
+        expertClock.draw(batcher,3*width/4,height/4,width/5);
+        font.draw(batcher,easyMessage,0, 2*height/5, width/2,Align.center,true);
+        font.draw(batcher,mediumMessage,1*width/2, 2*height/5,width/2,Align.center,true);
+        font.draw(batcher,hardMessage,0, height/8,width/2,Align.center,true);
+        font.draw(batcher,expertMessage,1*width/2, height/8,width/2,Align.center,true);
         batcher.end();
     }
 }
