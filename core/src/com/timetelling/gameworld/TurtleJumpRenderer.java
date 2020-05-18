@@ -40,14 +40,14 @@ public class TurtleJumpRenderer extends GameRenderer {
         choices = this.world.getChoices();
         mountain = AssetLoader.turtleJumpBackground;
         turtle = AssetLoader.turtleShadow;
-        turtleMove = new ImgButton(17*width/40,height/10,width/6,height/5,"",AssetLoader.turtleShadow,AssetLoader.font);
+        turtleMove = new ImgButton(17*width/40,height/10,width/6,height/6,"",AssetLoader.turtleShadow,AssetLoader.font);
         buttons = new ImgButton[choices.length];
         font = AssetLoader.font;
-        infoMessage = new ImgButton(0,height/6, width/4,height/6,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font);
-        message = new ImgButton(7*width/10,height/6,width/4,height/6,"", AssetLoader.clouds, AssetLoader.font);
+        infoMessage = new ImgButton(0,height/8, width/4,height/7,"Click the corresponding time", AssetLoader.clouds, AssetLoader.font);
+        message = new ImgButton(7*width/10,height/8,width/4,height/7,"", AssetLoader.clouds, AssetLoader.font);
         clock = new Clock(this.world.getCorrectTime());
         for (int i = 0; i < buttons.length; i++) {
-            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), width/3, width/(buttons.length+2), width/6, "", AssetLoader.platform, AssetLoader.whiteFont);
+            buttons[i] = new ImgButton((i+1)*width/(buttons.length+2), height/4, width/(buttons.length+2), height/12, "", AssetLoader.platform, AssetLoader.whiteFont);
         }
     }
 
@@ -81,12 +81,12 @@ public class TurtleJumpRenderer extends GameRenderer {
                 boolean answer = world.guess(choices[i]);
                 if (answer) {
                     if (bar.isMax()) game.setScreen(new WinScreen(game));
-                    infoMessage = new ImgButton(0,height/6, width/4,height/6,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font,0,0);
-                    message = new ImgButton(7*width/10,height/6,width/4,height/6,"Great job!",AssetLoader.clouds,AssetLoader.font,0,0);
-                    turtleMove = new ImgButton((i+1)*width/(buttons.length+2),7*width/15,width/6,height/5,"", AssetLoader.turtleShadow, AssetLoader.font,0,0);                }
+                    infoMessage = new ImgButton(0,height/8, width/4,height/7,"Click the corresponding time", AssetLoader.clouds,AssetLoader.font,0,0);
+                    message = new ImgButton(7*width/10,height/8,width/4,height/7,"Great job!",AssetLoader.clouds,AssetLoader.font,0,0);
+                    turtleMove = new ImgButton((i+1)*width/(buttons.length+2),17*height/54,width/6,height/6,"", AssetLoader.turtleShadow, AssetLoader.font,0,0);                }
                 else {
-                    message = new ImgButton(7*width/10,height/6,width/4,height/6,"Oops, the correct time is " + this.world.getCorrectTime().toString(),AssetLoader.clouds,AssetLoader.font,0,0);
-                    turtleMove = new ImgButton(17*width/40,height/10,width/6,height/5,"", AssetLoader.turtleShadow, AssetLoader.font, 0,0);
+                    message = new ImgButton(7*width/10,height/8,width/4,height/7,"Oops, the correct time is " + this.world.getCorrectTime().toString(),AssetLoader.clouds,AssetLoader.font,0,0);
+                    turtleMove = new ImgButton(17*width/40,height/10,width/6,height/6,"", AssetLoader.turtleShadow, AssetLoader.font, 0,0);
                 }
                 clock.setTime(world.getCorrectTime());
                 return true;
